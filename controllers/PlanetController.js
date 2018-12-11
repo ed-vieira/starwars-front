@@ -34,7 +34,7 @@ exports.searchPlanet = function(req, res) {
 
 exports.deletePlanet = function(req, res) {
   
-    Request.delete("http://localhost:3000/api/planeta/"+req.query.id, (err, response, body) => {
+    Request.delete("http://localhost:3300/api/planeta/"+req.query.id, (err, response, body) => {
       if(err) {
         console.log(err);
       }else{
@@ -93,7 +93,7 @@ function saveData(name,climate, terrain){
 function updateData(id, name,climate, terrain){
   var options = {
     method: 'PUT',
-    url: 'http://localhost:3000/api/planeta/'+id,
+    url: 'http://localhost:3300/api/planeta/'+id,
     headers: 
      {      
        'cache-control': 'no-cache',
