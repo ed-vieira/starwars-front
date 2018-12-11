@@ -1,0 +1,36 @@
+
+include header.pug
+
+  
+body(ng-app="stwPlanetas")
+
+  include nav.pug
+  main(role="main" class="container" style="margin-top: 10%")
+   div(class="row")
+    div(class="col-md-6")
+     div(class="panel panel-default")
+      div(class="panel panel-body")
+       div(class="panel panel-heading")
+        legend  Star Wars API 
+        p #{page} 
+      
+ 
+        form(action="/save-planet" method="POST")
+
+         div(class="form-group")
+           input(type="text" name="_name" required="true" placeholder="Nome do Planeta:" class="form-control")
+        
+         div(class="form-group")
+            input(type="text" name="_climate" required="true" placeholder="Clima do Planeta:" class="form-control")
+        
+         div(class="form-group")
+            input(type="text" name="_terrain" required="true" placeholder="Terreno do Planeta:" class="form-control")
+        
+         div(class="form-group")
+            button(class="btn btn-success" )  
+             i(class="fa fa-save")  Enviar
+
+
+
+
+include footer.pug

@@ -1,0 +1,50 @@
+include header.pug
+  
+body(ng-app="stwPlanetas")
+  
+  include nav.pug
+
+  main(role="main" class="container" style="margin-top: 10%")
+   div(class="row")
+    div(class="col-md-6")
+     div(class="panel panel-default")
+      div(class="panel panel-body")
+       div(class="panel panel-heading")
+        legend  Star Wars API 
+        p #{page}    
+        
+        if name !== ""
+         div(ng-controller="planetasCtrlSWAPIFilms" ng-init="loadDataBySearch('"+name+"')") 
+         
+          table(class="table")
+           thead(class="thead-dark")
+            tr
+             th(scope="col") #
+             th(scope="col") Nome
+             th(scope="col") Clima
+             th(scope="col") Terreno
+            tbody(ng-repeat="p in listarPlanetas")
+             tr
+              th(scope="row")
+               a(href="/select?id={{p._id}}") 
+                i(class="fa fa-search")
+              td {{p.name}}
+              td {{p.climate}}
+              td {{p.terrain}}
+
+          div(class="row")
+            div(class="col-md-4")
+             table(class="table")
+               thead(class="thead-dark") Filmes | {{listarFilmes.length}} 
+                tbody(ng-repeat="url in listarFilmes")
+                 tr
+                  td 
+                   a(href="{{url}}") Link
+                 tfoot 
+ 
+        else 
+            p Digite o nome do planeta no campo de busca!
+              
+                  
+ 
+include footer.pug

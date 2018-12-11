@@ -1,0 +1,40 @@
+include header.pug
+
+body(ng-app="stwPlanetas")
+  
+  include nav.pug
+
+  main(role="main" class="container" style="margin-top: 10%")
+   div(class="row")
+    div(class="col-md-6")
+     div(class="panel panel-default")
+      div(class="panel panel-body")
+       div(class="panel panel-heading")
+        legend  Star Wars API 
+       p #{page}    
+        
+        div(ng-controller="planetasCtrlSelect" ) 
+         
+         table(class="table")
+          thead(class="thead-dark" ng-init="loadDataById('"+id+"')")
+           tr
+            th(scope="col") #
+            th(scope="col") Nome
+            th(scope="col") Clima
+            th(scope="col") Terreno
+            th(scope="col") Filmes
+           tbody
+            tr
+             th(scope="row")
+               a(href="/edit?id={{planet._id}}") 
+                i(class="fa fa-edit") Editar
+             td {{planet.name}}
+             td {{planet.climate}}
+             td {{planet.terrain}}
+             td 
+              a(href="/search?_name={{planet.name}}") 
+               i(class="fa fa-check-square")
+
+              
+
+include footer.pug

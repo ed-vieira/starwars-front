@@ -1,0 +1,41 @@
+include header.pug
+
+body(ng-app="stwPlanetas")
+
+  include nav.pug
+   main(role="main" class="container" style="margin-top: 10%")
+    div(class="row")
+     div(class="col-md-6")
+      div(class="panel panel-default")
+       div(class="panel panel-body")
+        div(class="panel panel-heading")
+         legend  Star Wars API 
+         p #{page} 
+      
+         div(ng-controller="planetasCtrlEdit" )
+
+           form(action="/update-planet" method="POST" ng-init="loadDataById('"+id+"')")
+
+            div
+              input(type="hidden" name="_id" ng-model="_id" value="{{planet._id}}" ) 
+
+            div(class="form-group")
+              input(type="text" name="_name"   ng-model="_name" value="{{planet.name}}" placeholder="Nome do Planeta:" class="form-control")
+           
+            div(class="form-group")
+              input(type="text" name="_climate" ng-model="_climate" value="{{planet.climate}}" placeholder="Clima do Planeta:" class="form-control")
+        
+            div(class="form-group")
+              input(type="text" name="_terrain" ng-model="_terrain" value="{{planet.terrain}}" placeholder="Terreno do Planeta:" class="form-control")
+        
+            div(class="form-group")             
+               button(class="btn btn-success mr-1") 
+                i(class="fa fa-edit")  Editar
+               a(class="btn btn-danger" onclick="return confirm('Apagar registro?')" href="/delete?id={{planet._id}}")  
+                i(class="fa fa-eraser")  Apagar
+
+            
+
+
+  
+include footer.pug
