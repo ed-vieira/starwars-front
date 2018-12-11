@@ -3,7 +3,7 @@ var app = angular.module('stwPlanetas', []);
 
 app.controller('planetasCtrlList', function($scope, $http){
     $scope.loadData= function(){ 
-        let url = "http://localhost:3000/api/planetas";             
+        let url = "http://localhost:3300/api/planetas";             
         $http.get(url)
          .then(function(response) {
            $scope.listarPlanetas = response.data.planets;
@@ -18,7 +18,7 @@ app.controller('planetasCtrlList', function($scope, $http){
 
 app.controller('planetasCtrlSelect', function($scope, $http) {   
     $scope.loadDataById= function (id){       
-        let url = "http://localhost:3000/api/planeta/"+id;          
+        let url = "http://localhost:3300/api/planeta/"+id;          
         $http.get(url)
         .then(function(response) {
            $scope.planet = response.data.planet;
@@ -33,7 +33,7 @@ app.controller('planetasCtrlSelect', function($scope, $http) {
 
 app.controller('planetasCtrlEdit', function($scope, $http) {  
     $scope.loadDataById= function (id){       
-        let url = "http://localhost:3000/api/planeta/"+id;          
+        let url = "http://localhost:3300/api/planeta/"+id;          
         $http.get(url)
         .then(function(response) {
            $scope.planet = response.data.planet;
@@ -53,7 +53,7 @@ app.controller('planetasCtrlEdit', function($scope, $http) {
 app.controller('planetasCtrlSearch', function($scope, $http) {
     
     $scope.loadDataBySearch= function (name){       
-        let url = "http://localhost:3000/api/buscar-planeta/"+name;          
+        let url = "http://localhost:3300/api/buscar-planeta/"+name;          
         $http.get(url)
         .then(function(response) {
            $scope.listarPlanetas = response.data.planet;
@@ -66,7 +66,7 @@ app.controller('planetasCtrlSearch', function($scope, $http) {
      
 
     $scope.loadDataFilms= function (name){       
-        let url = "http://localhost:3000/api/swappi/planet-films/"+name;          
+        let url = "http://localhost:3300/api/swappi/planet-films/"+name;          
         $http.get(url)
         .then(function(response) {
            $scope.listarFilmes = response.data.results[0].films;
@@ -93,7 +93,7 @@ app.controller('planetasCtrlSearch', function($scope, $http) {
 app.controller('planetasCtrlSWAPI', function($scope, $http){
    
     $scope.loadData= function(){ 
-        let url = "http://localhost:3000/api/swappi/planets";             
+        let url = "http://localhost:3300/api/swappi/planets";             
         $http.get(url)
          .then(function(response) {
            $scope.listarPlanetas = response.data.results;
@@ -111,7 +111,7 @@ app.controller('planetasCtrlSWAPI', function($scope, $http){
 app.controller('planetasCtrlSWAPIFilms', function($scope, $http){
 
     $scope.loadDataBySearch= function (name){       
-        let url = "http://localhost:3000/api/swappi/planet-films/"+name;          
+        let url = "http://localhost:3300/api/swappi/planet-films/"+name;          
         $http.get(url)
         .then(function(response) {
            $scope.listarPlanetas = response.data.results;
