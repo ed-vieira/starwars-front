@@ -65,7 +65,7 @@ exports.index= function(req, res){
 function saveData(name,climate, terrain){
   var options = {
     method: 'POST',
-    url: 'http://localhost:3000/api/novo-planeta',
+    url: 'http://localhost:3300/api/novo-planeta',
     headers: 
      {      
        'cache-control': 'no-cache',
