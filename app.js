@@ -15,4 +15,4 @@ routes(app); //registrando as rotas
     res.status(404).send({url: req.originalUrl + ' não encontrado'})
   });
 
-app.listen(port, () => console.log(`Servidor iniciado em http://localhost:${port}!`));
+app.listen(port, () => console.log(`Servidor iniciado em http://localhost:${port}`));
