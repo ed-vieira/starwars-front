@@ -13,4 +13,5 @@ Inicie o servidor com o comando:
 
 "$ node server.js"
 
-O projeto está configurado para o node usar a porta 3301.
+O projeto está configurado para o node usar a url
+http://localhost:3301.
