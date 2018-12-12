@@ -1,5 +1,5 @@
 # starwars-front
-exemplo de uso da API starwars
+Exemplo de uso da API starwars
 
 Interface web para API do game do Star Wars, que poderá ser usada após a API ser iniciada.
 
