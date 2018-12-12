@@ -1,7 +1,7 @@
 # starwars-front
 exemplo de uso da API starwars
 
-Interfaces para API do game do Star Wars
+Interface web para API do game do Star Wars, que poderá ser usada após a API ser iniciada.
 
 Necessário ter o nodejs e o npm instalados.
 
